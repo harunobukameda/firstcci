@@ -13,18 +13,6 @@ jobs:
       - checkout
 
       - run:
-          name: Initial npm install
-          command: npm init -y
-
-      - run:
-          name: Install dependencies (clean)
-          command: npm ci
-
-      - run:
-          name: Run build (if needed)
-          command: npm run build
-
-      - run:
           name: Zip Lambda function
           command: zip -r function.zip .
 
