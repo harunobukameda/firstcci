@@ -13,7 +13,11 @@ jobs:
       - checkout
 
       - run:
-          name: Install dependencies
+          name: Initial npm install
+          command: npm install
+
+      - run:
+          name: Install dependencies (clean)
           command: npm ci
 
       - run:
