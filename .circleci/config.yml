@@ -32,7 +32,7 @@ jobs:
 
             # Lambdaのデプロイを実行
             aws lambda update-function-code \
-              --function-name YOUR_LAMBDA_FUNCTION_NAME \
+              --function-name firstcci \
               --zip-file fileb://lambda.zip
 
 workflows:
