@@ -30,11 +30,13 @@ jobs:
             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
             export AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
 
+            # AWS CLIのページャーを無効化
+            export AWS_PAGER=""
+
             # Lambdaのデプロイを実行
             aws lambda update-function-code \
               --function-name firstcci \
-              --zip-file fileb://lambda.zip \
-              --no-pager
+              --zip-file fileb://lambda.zip
 
 workflows:
   version: 2
