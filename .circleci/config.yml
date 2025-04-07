@@ -45,3 +45,7 @@ workflows:
       - deploy_lambda:
           context:
             - aws-credentials
+	 filters:  
+            branches:
+              only:  
+                - /prod/
