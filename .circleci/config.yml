@@ -38,6 +38,11 @@ jobs:
               --function-name firstcci \
               --zip-file fileb://lambda.zip
 
+  approval:
+    type: approval
+    approval_type: manual
+    message: "Please approve the deployment of the Lambda function."
+
 workflows:
   version: 2
   deploy:
@@ -49,3 +54,6 @@ workflows:
             branches:
               only:
                 - /prod*/
+      - approval:
+          requires:
+            - deploy_lambda
